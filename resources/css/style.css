@@ -1,0 +1,17 @@
+@CHARSET "ISO-8859-1";
+
+.temp_veiculo{
+	
+}
+
+.temp_ponto{
+	font-size: 12px !important;
+}
+
+.temp_data{
+	font-size: 10px !important;
+}
+
+.status {
+	-webkit-mask-box-image: url('../images/bolt.png') !important;
+}

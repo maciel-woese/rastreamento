@@ -1,0 +1,122 @@
+@CHARSET "ISO-8859-1";
+
+.temp_veiculo{
+  
+}
+
+.temp_ponto{
+  font-size: 12px !important;
+}
+
+.temp_data{
+  font-size: 10px !important;
+}
+
+.status {
+  -webkit-mask-box-image: url('../resources/images/bolt.png') !important;
+}
+
+html, body {
+  height: 100%;
+  background-color: #1985D0
+}
+
+#appLoadingIndicator {
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+  text-align: center;
+  width: 100%;
+  height: 30px;
+  -webkit-animation-name: appLoadingIndicator;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: linear;
+}
+
+#appLoadingIndicator > * {
+  background-color: #FFFFFF;
+  display: inline-block;
+  height: 30px;
+  -webkit-border-radius: 15px;
+  margin: 0 5px;
+  width: 30px;
+  opacity: 0.8;
+}
+
+@-webkit-keyframes appLoadingIndicator{
+  0% {
+    opacity: 0.8
+  }
+  50% {
+    opacity: 0
+  }
+  100% {
+    opacity: 0.8
+  }
+}
+
+
+    .x-menu {
+        background: #eee;
+    }
+    .x-menu {
+      padding: 0.7em;
+      background-image: none;
+      background-color: rgba(153, 153, 153, 0.9);
+    }
+
+    .x-menu .x-button {
+      margin-bottom: 0.7em;
+    }
+
+    .x-menu .x-button:last-child {
+      margin-bottom: 0;
+    }
+            .x-menu {
+      background-color: #efefef;
+      -webkit-box-shadow: inset -3px 0px 20px -10px black;
+      box-shadow: inset -3px 0px 20px -10px black;
+      background-color: #efefef;
+      -webkit-box-shadow: inset -3px 0px 20px -10px black;
+      box-shadow: inset -3px 0px 20px -10px black;
+      padding: 0px;
+    }
+
+    .x-menu .x-button {
+      padding: 1em;
+      border: none;
+      padding-right: 1em;
+      border-radius: 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      text-align: right;
+      background-color: transparent;
+      margin: 0px;
+    }
+
+    .x-menu .x-button.x-button-pressing {
+      background-color: #e1e1e1;
+      background-image: none;
+    }
+    .x-menu .x-button .x-button-label, .x-menu .x-button .x-badge {
+      line-height: 1.3em;
+      text-align: left;
+      font-weight: 300;
+    }
+    .x-button {
+        display: flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        background-color: #eee;
+        border: 1px solid #cccccc;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+    .x-button, .x-button.x-button-back:after, .x-button.x-button-forward:after {
+    background-image: none;
+    background-color: #ccc;
+    }
