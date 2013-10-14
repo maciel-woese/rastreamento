@@ -51,8 +51,8 @@ Ext.define('ShSolutions.controller.Principal', {
     },
     
     checkAjax: function(){
-        if(checkConnection()==0){
+        /*if(checkConnection()==0){
             showAlert();
-        }
+        }*/
     }
 });

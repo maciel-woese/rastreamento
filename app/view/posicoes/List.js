@@ -82,6 +82,8 @@ Ext.define('ShSolutions.view.posicoes.List', {
                 loadedText: 'Carregado',
                 loadingText: 'Carregando...',
                 pullRefreshText: 'Puxe para baixo para atualizar...',
+				pullText: 'Puxe para baixo para atualizar...',
+				releaseText: 'Solte a atualização...',
                 releaseRefreshText: 'Solte a atualização...',
                 type: 'pullrefresh'
             }

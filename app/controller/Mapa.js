@@ -71,7 +71,7 @@ Ext.define('ShSolutions.controller.Mapa', {
         var icon = 'false';        
       }
       else{
-        var icon = pIcoDir;
+        var icon = 'resources/images/placemark.gif';
       }
       var marker = new google.maps.Marker({
             position: point,

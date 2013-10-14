@@ -25,18 +25,22 @@ Ext.define('ShSolutions.view.login.Login', {
                 centered: true,
                 title: 'Login',
                 items: [
+					{
+						xtype: 'image',
+						margin: 5,
+						height: 160,
+						src: 'resources/images/logo.png'
+					},
                     {
                         xtype: 'textfield',
                         label: 'Usuário',
                         name: 'login',
-                        value: 'sousa',
                         required: true
                     },
                     {
                         xtype: 'passwordfield',
                         label: 'Senha',
                         name: 'senha',
-                        value: 'sousa',
                         required: true
                     }
                 ]
