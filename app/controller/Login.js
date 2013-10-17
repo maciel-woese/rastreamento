@@ -17,7 +17,7 @@ Ext.define('ShSolutions.controller.Login', {
     extend: 'Ext.app.Controller',
 
     config: {
-        views: [
+    	views: [
             'login.Login'
         ],
 
@@ -64,6 +64,7 @@ Ext.define('ShSolutions.controller.Login', {
 					window.usuario_info = o.dados;
 					Ext.device.Storage.setItem('isLogged', true);
 					ShSolutions.app.getController('Posicoes').showList();
+					Ext.getCmp('PrincipalContainer').setHeight('100%');
 				}
 				else{
 					Ext.Msg.alert('Erro!', o.msg);

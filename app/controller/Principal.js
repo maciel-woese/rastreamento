@@ -3,6 +3,10 @@ Ext.define('ShSolutions.controller.Principal', {
     requires: ['Ext.device.Storage', 'ShSolutions.components.MenuButton'],
 
     config: {
+        routes: {
+            '#showPosicoes': 'showPosicoes'
+        },
+
         refs: {
             main: 'principal'
         },
@@ -47,6 +51,27 @@ Ext.define('ShSolutions.controller.Principal', {
                     }
                 }
             }
+        }
+    },
+
+    showPosicoes: function(){
+        var newActiveItem = Ext.ComponentQuery.query('posicoeslist'),
+            main = this.getMain();
+
+        newActiveItem = newActiveItem.length > 0 ? newActiveItem[0] : null;
+        if(newActiveItem) {
+            main.setActiveItem(newActiveItem);
+            Ext.Viewport.hideAllMenus();
+
+            Ext.Viewport.getTranslatable().on('animationend', function() {
+                if(btn.getMenu()=='posicoeslist'){
+                    Ext.getCmp('ClienteVeiculos').getStore().getProxy().config.extraParams.cliente_id = window.usuario_info.CLI_ID;
+                    Ext.getCmp('ClienteVeiculos').getStore().load();
+                }
+                else if(btn.getMenu()=='login'){
+                    Ext.device.Storage.setItem('isLogged', false);
+                }
+            }, this, {single:true});
         }
     },
     

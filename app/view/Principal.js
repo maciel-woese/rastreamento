@@ -33,7 +33,7 @@ Ext.define('ShSolutions.view.Principal', {
             {
                 xtype: 'toolbar',
                 docked: 'top',
-                title: 'Sh Solutions',
+                title: 'SDSAT',
                 items: [
                     {
                         xtype: 'button',

@@ -54,7 +54,19 @@
 		*/
 	</script>
     <script src="touch/sencha-touch-all.js"></script>
-    <link rel="stylesheet" href="touch/resources/css/sencha-touch.css">
+    <script type="text/javascript">
+        if (!Ext.browser.is.WebKit) {
+            alert("Navegador incompativel!.\n\nNavegadores Compativeis:\n" +
+                "Google Chrome\n" +
+                "Apple Safari\n" +
+                "Mobile Safari (iOS)\n" +
+                "Android Browser\n" +
+                "BlackBerry Browser"
+            );
+        }
+    </script>
+    <!--<link rel="stylesheet" href="touch/resources/css/sencha-touch.css">-->
+    <link rel="stylesheet" href="touch/resources/css/sdsat.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script type="text/javascript" src="app.js"></script>

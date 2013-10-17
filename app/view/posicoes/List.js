@@ -78,6 +78,15 @@ Ext.define('ShSolutions.view.posicoes.List', {
         ],
         plugins: [
             {
+                xclass: 'Ext.plugin.ListPaging',
+                autoPaging: true,
+                noMoreRecordsText: 'Sem mais registros',
+                loadMoreText: 'Carregar mais...'
+            }
+        ]
+        /*,
+        plugins: [
+            {
                 lastUpdatedText: 'Última Atualização:',
                 loadedText: 'Carregado',
                 loadingText: 'Carregando...',
@@ -87,7 +96,7 @@ Ext.define('ShSolutions.view.posicoes.List', {
                 releaseRefreshText: 'Solte a atualização...',
                 type: 'pullrefresh'
             }
-        ]
+        ]*/
     }
 
 });
