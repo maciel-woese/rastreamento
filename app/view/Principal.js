@@ -40,6 +40,14 @@ Ext.define('ShSolutions.view.Principal', {
                         ui: 'plain',
                         action: 'menu',
                         iconCls: 'list'
+                    },
+					{
+                        xtype: 'button',
+						hidden: true,
+						id: 'back_list',
+                        action: 'back_list',
+                        ui: 'plain',
+                        iconCls: 'arrow_left'
                     }
                 ]
             },

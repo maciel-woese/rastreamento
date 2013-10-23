@@ -42,7 +42,7 @@ Ext.define('ShSolutions.controller.Login', {
 	
 	login: function(button){
 		var me = this;
-		
+		window.scrollTo(0,0);
 		ShSolutions.app.getController('Principal').checkAjax();
 		
 		Ext.device.Storage.setItem('isLogged', false);
@@ -63,8 +63,9 @@ Ext.define('ShSolutions.controller.Login', {
 				if(o.success==true){
 					window.usuario_info = o.dados;
 					Ext.device.Storage.setItem('isLogged', true);
+					Ext.device.Storage.setItem('USR_ID', o.dados.USR_ID);
+					Ext.device.Storage.setItem('CLI_ID', o.dados.CLI_ID);
 					ShSolutions.app.getController('Posicoes').showList();
-					Ext.getCmp('PrincipalContainer').setHeight('100%');
 				}
 				else{
 					Ext.Msg.alert('Erro!', o.msg);

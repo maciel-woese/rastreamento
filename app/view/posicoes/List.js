@@ -46,34 +46,6 @@ Ext.define('ShSolutions.view.posicoes.List', {
                         valueField: 'id'
                     }
                 ]
-            },
-            {
-                xtype: 'picker',
-                hidden: true,
-                id: 'picker_action_posicoes',
-                doneButton: {
-                    xtype: 'button',
-                    id: 'btn_done',
-                    text: 'Ok'
-                },
-                cancelButton: 'Cancelar',
-                slots: [
-                    {
-                        xtype: 'pickerslot',
-                        name: 'action',
-                        title: 'Ação',
-                        data: [
-                            {
-                                text: 'Visualizar no Mapa',
-                                value: 1
-                            },
-                            {
-                                text: 'Bloquear Carro',
-                                value: 2
-                            }
-                        ]
-                    }
-                ]
             }
         ],
         plugins: [

@@ -28,20 +28,31 @@ Ext.define('ShSolutions.view.login.Login', {
 					{
 						xtype: 'image',
 						margin: 5,
-						height: 160,
+						width: '97%',
+						height: 122,
 						src: 'resources/images/logo.png'
 					},
                     {
                         xtype: 'textfield',
                         label: 'Usuário',
                         name: 'login',
-                        required: true
+                        required: true,
+						listeners: {
+							blur: function() {
+								window.scrollTo(0,0);
+							}
+						}
                     },
                     {
                         xtype: 'passwordfield',
                         label: 'Senha',
                         name: 'senha',
-                        required: true
+                        required: true,
+						listeners: {
+							blur: function() {
+								window.scrollTo(0,0);
+							}
+						}
                     }
                 ]
             },

@@ -71,7 +71,7 @@ Ext.define('ShSolutions.controller.Mapa', {
         var icon = 'false';        
       }
       else{
-        var icon = 'resources/images/placemark.gif';
+        var icon = 'resources/images/point.png';
       }
       var marker = new google.maps.Marker({
             position: point,
@@ -143,9 +143,24 @@ Ext.define('ShSolutions.controller.Mapa', {
                                 var marker = new google.maps.Marker({
                                     position: ptsGPolyline[j],
                                     icon: icon,
+									zIndex: (google.maps.Marker.MAX_ZINDEX + 1),
                                     map: me.Map
                                 });
                                 me.cache.marker.push(marker);
+								
+								if(jsonData.lines[i].points1[j].pFlag == 0){ 
+									var html = "<b>Sequência: </b>"+ jsonData.lines[i].points1[j].pSeguencia + "<br>"+"<b>Desc.Veiculo: </b>"+ jsonData.lines[i].points1[j].pVeiculo + "<br>"+"<b>Data: </b>"+ jsonData.lines[i].points1[j].pData +"<br>"+"<b>Ponto mais proximo: </b>"+ jsonData.lines[i].points1[j].pPonto +"<br>" + "<b>Distancia até o Ponto: </b>"+ jsonData.lines[i].points1[j].pDistancia +"<br>" +"<b>Latitude: </b>"+ jsonData.lines[i].points1[j].pLat +"<br>" +"<b>Longitude: </b>"+ jsonData.lines[i].points1[j].pLng +"<br>" +"<b>Distancia Entre Posições: </b>"+ jsonData.lines[i].points1[j].pDist_Between_Positions +"<br>" +"<b>Direção: </b>"+ jsonData.lines[i].points1[j].pDirecao +"<br>" +"<b>Velocidade: </b>"+ jsonData.lines[i].points1[j].pVel +"<br>" +"<b>Tensão: </b>"+ jsonData.lines[i].points1[j].pTen +"<br>"+"<b>Ignição: </b>"+ jsonData.lines[i].points1[j].pIgnicao;
+								}
+								else {
+									var html = jsonData.lines[i].points1[j].pPonto;
+								}
+								me.cache.marker.push(marker);
+								google.maps.event.addListener(marker, "click", function() {
+								  me.infowindow.setContent(html); 
+								  me.infowindow.open(me.Map, marker);
+								  me.Map.setCenter(ptsGPolyline[j], 17);
+								});
+								
                                 me.Map.setCenter(ptsGPolyline[j]);
                             }
                         }
@@ -165,7 +180,10 @@ Ext.define('ShSolutions.controller.Mapa', {
                         ptsGPolyline.pop();
                         //midArrows(polyline);
                       }
-                  }
+					}
+					else{
+						Ext.Msg.alert('Aviso!', "Nenhuma Rota Encontrada!");
+					}
                 }
                 else{
                     if(o.msg){
